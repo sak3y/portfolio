@@ -5,40 +5,31 @@ export default function App() {
     <>
       <header>
         <nav>
-          <ul className="nav-group">
-            <li className="home-button nav-item">
-              <a href="#" className="icon">
-                <i className="fa fa-home"></i>
-              </a>
-            </li>
-            <a
-              className="icon nav-item"
+          <div className="nav-group">
+            <Link id="home-button" icon="fa fa-home" href="#" label="home" />
+            <Link
+              icon="fab fa-github"
               href="https://github.com/sakey01"
+              show="show"
               target="_blank"
-              aria-label="GitHub"
-            >
-              <i class="fab fa-github"></i>
-            </a>
-            <a
-              className="icon nav-item"
+              label="Github"
+            />
+            <Link
+              icon="fab fa-linkedin"
               href="https://linkedin.com/in/sheikh-rayhan-ahmed"
+              show="show"
               target="_blank"
-              aria-label="LinkedIn"
-            >
-              <i class="fab fa-linkedin"></i>
-            </a>
+              label="LinkedIn"
+            />
 
-            <li className="dark-mode-button nav-item">
-              <button className="dark-mode-icon icon" onClick={toggleDark}>
-                <i className="fa fa-moon"></i>
-              </button>
-            </li>
-            <li className="menu-button nav-item">
-              <button className="menu-icon icon" onClick={openMenu}>
-                &#9776;
-              </button>
-            </li>
-          </ul>
+            <button className="dark-mode-button nav-item icon show" onClick={toggleDark}>
+              <i className="fa fa-moon"></i>
+            </button>
+
+            <button className="menu-button nav-item icon hide" onClick={openMenu}>
+              &#9776;
+            </button>
+          </div>
         </nav>
       </header>
       <main>
@@ -49,7 +40,7 @@ export default function App() {
             <br />
             Aspiring Full-Stack Developer.
           </h1>
-          <p className="paragraph">Here to design sotware thats works and lasts</p>
+          <p className="paragraph">Here to design sotware thats work and last</p>
           <a href="#projects-section">View Projects</a>
         </section>
 
@@ -75,14 +66,7 @@ export default function App() {
             P.S: I'm also active on
             <a target="_blank" href="https://github.com/sakey01">
               {" "}
-              <span
-                style={{
-                  textDecoration: "underline",
-                  color: "rgba(197, 0, 197, 1)",
-                }}
-              >
-                Github.
-              </span>
+              <span className="clicked-link">Github.</span>
             </a>
           </p>
         </section>
@@ -91,7 +75,6 @@ export default function App() {
 
         <section id="projects-section" className="projects">
           <h2>Projects</h2>
-
           <Project
             title="Fintrack"
             description="A budgeting app (in progress)."
@@ -99,11 +82,11 @@ export default function App() {
           />
           <Project
             title="Whack-a-mole"
-            description="Not much to explain here."
+            description="Hit the mole to score a point."
             href="https://sakey01.github.io/whack-a-mole/"
           />
           <Project
-            title="Github API"
+            title="Github Viewer"
             description="An API that lets you view Github profiles."
             href="https://sakey01.github.io/githhub-api/"
           />
@@ -178,6 +161,14 @@ function Project({ title, description, href }) {
   );
 }
 
+const Link = ({ id, icon, href, label, target, show }) => {
+  return (
+    <a href={href} className={`${id} ${show} nav-item icon`} target={target} aria-label={label}>
+      <i className={icon}></i>
+    </a>
+  );
+};
+
 function Experience({ title, company, dateFrom, dateTo }) {
   return (
     <div className="experience">
@@ -190,17 +181,12 @@ function Experience({ title, company, dateFrom, dateTo }) {
   );
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  if (prefersDark) {
-    document.documentElement.classList.add("dark");
-  }
-});
-
 function toggleDark() {
   const html = document.querySelector("html");
 
   html.classList.contains("dark") ? html.classList.remove("dark") : html.classList.add("dark");
 }
 
-function openMenu() {}
+function openMenu() {
+  
+}

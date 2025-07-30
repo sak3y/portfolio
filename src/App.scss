@@ -6,15 +6,16 @@
   --text: black;
   --secondary-text: rgb(70, 70, 70);
   --strong-text: rgb(10, 10, 10);
-  --nav-bg: rgba(255, 255, 255, 0.8);
+  --nav-bg: rgba(255, 255, 255, 0.7);
   --link-hover: grey;
   --button-bg: black;
   --button-text: white;
   --button-hover: rgb(35, 35, 35);
   --border-color: grey;
-  --img-shadow: rgb(215, 215, 215);
+  --img-shadow: rgb(220, 220, 220);
   --input-bg: rgb(235, 235, 235);
   --input-focus: rgb(0, 0, 0);
+  --clicked: rgb(150, 0, 150);
 }
 
 .dark {
@@ -22,7 +23,7 @@
   --text: white;
   --secondary-text: rgb(220, 220, 220);
   --strong-text: rgb(240, 240, 240);
-  --nav-bg: rgba(0, 0, 0, 0.8);
+  --nav-bg: rgba(0, 0, 0, 0.6);
   --link-hover: grey;
   --button-bg: white;
   --button-text: black;
@@ -32,6 +33,7 @@
   --hr-color: rgb(85, 85, 85);
   --input-bg: rgb(0, 0, 0);
   --input-focus: rgb(255, 255, 255);
+   --clicked: rgb(190, 0, 190);
 }
 
 // DARK MODE
@@ -103,11 +105,34 @@ nav {
   position: fixed;
   padding: 1rem;
   background-color: var(--nav-bg);
-  border-bottom: 0.5px solid var(--border-color);
-  backdrop-filter: blur(15px);
+  border: 0.5px solid var(--border-color);
+  backdrop-filter: blur(12px);
   width: 100%;
   z-index: 99;
   box-sizing: 0 4px 20px var(--img-shadow);
+
+  @media (min-width: 725px) {
+    top: 40px;
+    max-width: 34rem;
+    border-radius: 10px;
+    box-shadow: 0 30px 120px var(--img-shadow);
+
+    .hide {
+      display: none;
+    }
+
+    .show {
+      display: block;
+    }
+  }
+}
+
+.hide {
+  display: block;
+}
+
+.show {
+  display: none;
 }
 
 .nav-group {
@@ -124,7 +149,7 @@ nav {
 
   .icon {
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 
     &:hover {
       color: var(--button-hover);
@@ -132,16 +157,17 @@ nav {
   }
 }
 
-.menu-icon {
+.menu-button {
   font-size: 1.8rem !important;
   line-height: 0;
+  margin-bottom: 5px;
 }
 
 main {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-width: 35rem;
+  max-width: 36rem;
   margin: 0 2rem;
 }
 
@@ -254,7 +280,7 @@ footer {
       width: 400px;
       background-color: var(--input-bg);
       color: var(--text);
-      transition: all .1s ease-in-out;
+      transition: all 0.1s ease-in-out;
 
       &:nth-child(3) {
         padding-bottom: 5rem;
@@ -304,6 +330,11 @@ button {
 .paragraph {
   color: var(--secondary-text);
   line-height: 1.6em;
+}
+
+.clicked-link {
+  text-decoration: underline;
+  color: var(--clicked);
 }
 
 strong {
