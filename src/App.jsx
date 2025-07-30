@@ -1,5 +1,59 @@
 import "./App.scss";
 
+
+// Link component
+const Link = ({ id, icon, href, label, target, show }) => {
+  return (
+    <a href={href} className={`${id} ${show} nav-item icon`} target={target} aria-label={label}>
+      <i className={icon}></i>
+    </a>
+  );
+};
+
+// Project component
+const Project = ({ title, description, href }) => {
+  return (
+    <div className="project">
+      <div>
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
+      <a href={href} target="_blank" rel="noopener noreferrer" title="View Fintrack website">
+        View <span>&rsaquo;</span>
+      </a>
+    </div>
+  );
+};
+
+// Experience components
+const Experience = ({ title, company, dateFrom, dateTo }) => {
+  return (
+    <div className="experience">
+      <h3>
+        {title} {company ? ` @ ${company}` : ""}
+      </h3>
+      <time dateTime={dateFrom}>{dateFrom}</time>
+      {dateFrom && dateTo ? " - " : ""} <time dateTime={dateTo}>{dateTo}</time>
+    </div>
+  );
+};
+
+// Light/dark toggle
+function toggleDark() {
+  const html = document.querySelector("html");
+
+  html.classList.contains("dark") ? html.classList.remove("dark") : html.classList.add("dark");
+}
+
+// Menu toggle
+function openMenu() {
+  const menu = document.querySelector(".menu-button");
+  console.log(menu);
+
+  console.log("clicked");
+}
+
+// Default function
 export default function App() {
   return (
     <>
@@ -40,7 +94,7 @@ export default function App() {
             <br />
             Aspiring Full-Stack Developer.
           </h1>
-          <p className="paragraph">Here to design sotware thats work and last</p>
+          <p className="paragraph">Here to design software that work and last</p>
           <a href="#projects-section">View Projects</a>
         </section>
 
@@ -87,7 +141,7 @@ export default function App() {
           />
           <Project
             title="Github Viewer"
-            description="An API that lets you view Github profiles."
+            description="A website that uses an API to view Github profiles."
             href="https://sakey01.github.io/githhub-api/"
           />
           <Project
@@ -145,48 +199,4 @@ export default function App() {
       </main>
     </>
   );
-}
-
-function Project({ title, description, href }) {
-  return (
-    <div className="project">
-      <div>
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
-      <a href={href} target="_blank" rel="noopener noreferrer" title="View Fintrack website">
-        View <span>&rsaquo;</span>
-      </a>
-    </div>
-  );
-}
-
-const Link = ({ id, icon, href, label, target, show }) => {
-  return (
-    <a href={href} className={`${id} ${show} nav-item icon`} target={target} aria-label={label}>
-      <i className={icon}></i>
-    </a>
-  );
-};
-
-function Experience({ title, company, dateFrom, dateTo }) {
-  return (
-    <div className="experience">
-      <h3>
-        {title} {company ? ` @ ${company}` : ""}
-      </h3>
-      <time dateTime={dateFrom}>{dateFrom}</time>
-      {dateFrom && dateTo ? " - " : ""} <time dateTime={dateTo}>{dateTo}</time>
-    </div>
-  );
-}
-
-function toggleDark() {
-  const html = document.querySelector("html");
-
-  html.classList.contains("dark") ? html.classList.remove("dark") : html.classList.add("dark");
-}
-
-function openMenu() {
-  
 }

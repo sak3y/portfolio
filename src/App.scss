@@ -33,7 +33,7 @@
   --hr-color: rgb(85, 85, 85);
   --input-bg: rgb(0, 0, 0);
   --input-focus: rgb(255, 255, 255);
-   --clicked: rgb(190, 0, 190);
+  --clicked: rgb(190, 0, 190);
 }
 
 // DARK MODE
@@ -101,11 +101,19 @@ header {
   justify-content: center;
 }
 
+.hide {
+  display: block;
+}
+
+.show {
+  display: none;
+}
+
 nav {
   position: fixed;
   padding: 1rem;
   background-color: var(--nav-bg);
-  border: 0.5px solid var(--border-color);
+  border-bottom: 0.5px solid var(--border-color);
   backdrop-filter: blur(12px);
   width: 100%;
   z-index: 99;
@@ -114,6 +122,7 @@ nav {
   @media (min-width: 725px) {
     top: 40px;
     max-width: 34rem;
+    border: 0.5px solid var(--border-color);
     border-radius: 10px;
     box-shadow: 0 30px 120px var(--img-shadow);
 
@@ -125,14 +134,6 @@ nav {
       display: block;
     }
   }
-}
-
-.hide {
-  display: block;
-}
-
-.show {
-  display: none;
 }
 
 .nav-group {
@@ -256,28 +257,25 @@ h2 {
 footer {
   display: grid;
   gap: 2rem;
+  max-width: 36rem;
 
-  h2 {
-    text-align: center;
-  }
-
+  h2,
   p {
-    margin: 0 auto;
-    width: 420px;
+    text-align: center;
   }
 
   form {
     display: grid;
-    margin: 1rem auto;
+    justify-content: center;
     gap: 1rem;
 
     input {
       outline: none;
       padding: 1rem;
+      width: 20rem;
       border: 1px solid var(--border-color);
       border-radius: 5px;
       font-size: 0.9rem;
-      width: 400px;
       background-color: var(--input-bg);
       color: var(--text);
       transition: all 0.1s ease-in-out;
