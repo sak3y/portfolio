@@ -1,5 +1,5 @@
 import "./App.scss";
-import img from '/images/avatar.png';
+import avatar from '/images/avatar.png';
 
 // Link component
 const Link = ({ id, icon, href, label, target, show }) => {
@@ -88,7 +88,7 @@ export default function App() {
       </header>
       <main>
         <section id="hero-section">
-          <img src={img} alt="Profile"/>
+          <img src={avatar} alt="Profile"/>
           <h1>
             Hey, I'm Sheikh.
             <br />
