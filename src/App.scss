@@ -11,11 +11,11 @@
   --button-bg: black;
   --button-text: white;
   --button-hover: rgb(35, 35, 35);
-  --border-color: grey;
+  --border-color: rgb(170, 170, 170);
   --img-shadow: rgb(220, 220, 220);
   --input-bg: rgb(235, 235, 235);
   --input-focus: rgb(0, 0, 0);
-  --clicked: rgb(150, 0, 150);
+  --visited-link: rgb(150, 0, 150);
 }
 
 .dark {
@@ -33,7 +33,7 @@
   --hr-color: rgb(85, 85, 85);
   --input-bg: rgb(0, 0, 0);
   --input-focus: rgb(255, 255, 255);
-  --clicked: rgb(190, 0, 190);
+  --visited-link: rgb(190, 0, 190);
 }
 
 // DARK MODE
@@ -63,6 +63,14 @@
   justify-content: center;
 }
 
+@mixin glass-bg {
+  position: fixed;
+  width: 100%;
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  z-index: 99;
+}
+
 @mixin primary-button {
   cursor: pointer;
   padding: 0.75rem 1rem;
@@ -86,6 +94,14 @@
   letter-spacing: -0.5px;
 }
 
+.hide {
+  display: block;
+}
+
+.show {
+  display: none;
+}
+
 html {
   display: flex;
   justify-content: center;
@@ -97,39 +113,57 @@ html {
 
 // NAVIGATION
 header {
+  position: relative;
   display: flex;
   justify-content: center;
-}
 
-.hide {
-  display: block;
-}
+  // MOBILE NAVIGATION
+  .nav-mobile {
+    display: grid;
 
-.show {
-  display: none;
+    a,
+    button {
+      text-align: left;
+    }
+
+    span {
+      margin-left: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .nav-item-mobile {
+      width: 100vw;
+      margin-top: 10px;
+      padding: 1.2rem 0 1.2rem 1.5rem;
+      transition: transform 0.2s ease-in-out;
+
+    
+
+      &:hover {
+        transform: translateX(5px);
+        backdrop-filter: blur(18px);
+      }
+    }
+    @media (min-width: 725px) {
+      display: none;
+    }
+  }
 }
 
 nav {
-  position: fixed;
-  padding: 1rem;
-  background-color: var(--nav-bg);
-  border-bottom: 0.5px solid var(--border-color);
-  backdrop-filter: blur(12px);
-  width: 100%;
-  z-index: 99;
-  box-sizing: 0 4px 20px var(--img-shadow);
+  @include glass-bg();
 
   @media (min-width: 725px) {
-    top: 40px;
+    top: 4rem;
     max-width: 34rem;
     border: 0.5px solid var(--border-color);
     border-radius: 10px;
     box-shadow: 0 30px 120px var(--img-shadow);
 
+    // CHANGE MENU ON SCREEN SIZE
     .hide {
       display: none;
     }
-
     .show {
       display: block;
     }
@@ -138,6 +172,7 @@ nav {
 
 .nav-group {
   display: flex;
+  padding: 1rem;
   justify-content: space-between;
   align-items: center;
   list-style: none;
@@ -147,15 +182,13 @@ nav {
   * {
     color: var(--text);
   }
+}
 
-  .icon {
-    cursor: pointer;
-    font-size: 1.4rem;
-
-    &:hover {
-      color: var(--button-hover);
-    }
-  }
+.icon {
+  cursor: pointer;
+  font-size: 1.4rem;
+  text-align: center;
+  color: var(--text);
 }
 
 .menu-button {
@@ -303,10 +336,6 @@ a {
   font-size: 1rem;
   color: var(--text);
   text-decoration: none;
-
-  &:hover {
-    color: var(--link-hover);
-  }
 }
 
 h1 {
@@ -325,6 +354,11 @@ button {
   border: none;
 }
 
+.nav-menu-border {
+  width: 100vw;
+  margin: 0;
+}
+
 .paragraph {
   color: var(--secondary-text);
   line-height: 1.6em;
@@ -332,7 +366,7 @@ button {
 
 .clicked-link {
   text-decoration: underline;
-  color: var(--clicked);
+  color: var(--visited-link);
 }
 
 strong {

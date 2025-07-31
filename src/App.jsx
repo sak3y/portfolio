@@ -1,11 +1,18 @@
 import "./App.scss";
-import avatar from '/images/avatar.png';
+import avatar from "/images/avatar.png";
+import { useState } from "react";
 
 // Link component
-const Link = ({ id, icon, href, label, target, show }) => {
+const Link = ({ id, title, icon, href, label, target, className }) => {
   return (
-    <a href={href} className={`${id} ${show} nav-item icon`} target={target} aria-label={label}>
+    <a
+      href={href}
+      className={`${id} ${className} nav-item icon`}
+      target={target}
+      aria-label={label}
+    >
       <i className={icon}></i>
+      <span> {title}</span>
     </a>
   );
 };
@@ -45,12 +52,50 @@ function toggleDark() {
   html.classList.contains("dark") ? html.classList.remove("dark") : html.classList.add("dark");
 }
 
-// Menu toggle
-function openMenu() {
-  const menu = document.querySelector(".menu-button");
-  console.log(menu);
+// Menu
+const menuButton = "☰";
 
-  console.log("clicked");
+function Menu() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <button className="menu-button nav-item icon hide" onClick={toggleMenu}>
+      {menuButton}
+    </button>
+  );
+}
+
+function MobileMenu({ isOpen }) {
+  return isOpen ? (
+    <div className="menu">
+      <div className="nav-mobile">
+        <Link
+          icon="fab fa-github"
+          title="GitHub"
+          className="nav-item-mobile"
+          href="https://github.com/sakey01"
+          target="_blank"
+          label="Github"
+        />
+        <Link
+          icon="fab fa-linkedin"
+          title="LinkedIn"
+          className="nav-item-mobile"
+          href="https://linkedin.com/in/sheikh-rayhan-ahmed"
+          target="_blank"
+          label="LinkedIn"
+        />
+        <button className="dark-mode-button nav-item icon nav-item-mobile" onClick={toggleDark}>
+          <i className="fa fa-moon"></i>
+          <span> Dark Mode</span>
+        </button>
+      </div>
+    </div>
+  ) : null;
 }
 
 // Default function
@@ -64,14 +109,14 @@ export default function App() {
             <Link
               icon="fab fa-github"
               href="https://github.com/sakey01"
-              show="show"
+              className="show"
               target="_blank"
               label="Github"
             />
             <Link
               icon="fab fa-linkedin"
               href="https://linkedin.com/in/sheikh-rayhan-ahmed"
-              show="show"
+              className="show"
               target="_blank"
               label="LinkedIn"
             />
@@ -80,21 +125,44 @@ export default function App() {
               <i className="fa fa-moon"></i>
             </button>
 
-            <button className="menu-button nav-item icon hide" onClick={openMenu}>
-              &#9776;
+            <Menu />
+          </div>
+
+          <hr className="hide nav-menu-border" />
+
+          <div className="nav-mobile">
+            <Link
+              icon="fab fa-github"
+              title="GitHub"
+              className="nav-item-mobile"
+              href="https://github.com/sakey01"
+              target="_blank"
+              label="Github"
+            />
+            <Link
+              icon="fab fa-linkedin"
+              title="LinkedIn"
+              className="nav-item-mobile"
+              href="https://linkedin.com/in/sheikh-rayhan-ahmed"
+              target="_blank"
+              label="LinkedIn"
+            />
+            <button className="dark-mode-button nav-item icon nav-item-mobile" onClick={toggleDark}>
+              <i className="fa fa-moon"></i>
+              <span> Dark Mode</span>
             </button>
           </div>
         </nav>
       </header>
       <main>
         <section id="hero-section">
-          <img src={avatar} alt="Profile"/>
+          <img src={avatar} alt="Profile" />
           <h1>
             Hey, I'm Sheikh.
             <br />
             Aspiring Full-Stack Developer.
           </h1>
-          <p className="paragraph">Here to design software that work and last</p>
+          <p className="paragraph">Here to design software that works</p>
           <a href="#projects-section">View Projects</a>
         </section>
 
@@ -103,11 +171,11 @@ export default function App() {
           <p className="paragraph">I'm a third years computer science student, born in the UK</p>
           <p className="paragraph">
             <strong>Here's the deal,</strong> I've worked on a range of projects, from collaborating
-            on an e-commerce store for gluten-free products with a team, to designing my own
-            portfolio and building a budgeting app. And that's just the beginning.
+            on an e-commerce store for gluten-free products, to designing my own portfolio and
+            building a budgeting app. And that's just the beginning.
           </p>
           <p className="paragraph">
-            I'm here because I like to build and also want to solve real problems.
+            I'm here because I like building and want to solve real problems.
           </p>
           <p className="paragraph">Two birds, one stone.</p>
           <p className="paragraph">
