@@ -3,14 +3,20 @@ import avatar from "/images/avatar.png";
 import { useState } from "react";
 
 // Link component
-const Link = ({ id, title, icon, href, label, target, className }) => {
+const Link = ({ id, title, icon, href, label, target, className, as = "a", onClick }) => {
+  const classes = `${id} ${className} nav-item icon`;
+
+  if (as === "button") {
+    return (
+      <button className={classes} aria-label={label} onClick={onClick}>
+        <i className={icon}></i>
+        <span> {title}</span>
+      </button>
+    );
+  }
+
   return (
-    <a
-      href={href}
-      className={`${id} ${className} nav-item icon`}
-      target={target}
-      aria-label={label}
-    >
+    <a href={href} className={classes} target={target} aria-label={label}>
       <i className={icon}></i>
       <span> {title}</span>
     </a>
@@ -52,54 +58,55 @@ function toggleDark() {
   html.classList.contains("dark") ? html.classList.remove("dark") : html.classList.add("dark");
 }
 
-// Menu
+// Mobile + desktop menu
+const MobileMenu = ({ isOpen }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="nav-mobile">
+      <Link
+        icon="fab fa-github"
+        title="GitHub"
+        className="nav-item-mobile"
+        href="https://github.com/sakey01"
+        target="_blank"
+        label="Github"
+      />
+      <Link
+        icon="fab fa-linkedin"
+        title="LinkedIn"
+        className="nav-item-mobile"
+        href="https://linkedin.com/in/sheikh-rayhan-ahmed"
+        target="_blank"
+        label="LinkedIn"
+      />
+      <Link
+        as="button"
+        icon="fa fa-moon"
+        title="Dark Mode"
+        className="nav-item-mobile"
+        label="Dark/light toggle"
+        onClick={toggleDark}
+      />
+    </div>
+  );
+};
+
 const menuButton = "☰";
 
-function Menu() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
+const Menu = ({ toggleMenu }) => {
   return (
     <button className="menu-button nav-item icon hide" onClick={toggleMenu}>
       {menuButton}
     </button>
   );
-}
-
-function MobileMenu({ isOpen }) {
-  return isOpen ? (
-    <div className="menu">
-      <div className="nav-mobile">
-        <Link
-          icon="fab fa-github"
-          title="GitHub"
-          className="nav-item-mobile"
-          href="https://github.com/sakey01"
-          target="_blank"
-          label="Github"
-        />
-        <Link
-          icon="fab fa-linkedin"
-          title="LinkedIn"
-          className="nav-item-mobile"
-          href="https://linkedin.com/in/sheikh-rayhan-ahmed"
-          target="_blank"
-          label="LinkedIn"
-        />
-        <button className="dark-mode-button nav-item icon nav-item-mobile" onClick={toggleDark}>
-          <i className="fa fa-moon"></i>
-          <span> Dark Mode</span>
-        </button>
-      </div>
-    </div>
-  ) : null;
-}
+};
 
 // Default function
 export default function App() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen((prev) => !prev);
+
   return (
     <>
       <header>
@@ -121,37 +128,20 @@ export default function App() {
               label="LinkedIn"
             />
 
-            <button className="dark-mode-button nav-item icon show" onClick={toggleDark}>
-              <i className="fa fa-moon"></i>
-            </button>
-
-            <Menu />
+            <Link
+              as="button"
+              icon="fa fa-moon"
+              className="nav-item show"
+              label="Dark/light toggle"
+              onClick={toggleDark}
+            />
+            
+            <Menu toggleMenu={toggleMenu} />
           </div>
 
           <hr className="hide nav-menu-border" />
 
-          <div className="nav-mobile">
-            <Link
-              icon="fab fa-github"
-              title="GitHub"
-              className="nav-item-mobile"
-              href="https://github.com/sakey01"
-              target="_blank"
-              label="Github"
-            />
-            <Link
-              icon="fab fa-linkedin"
-              title="LinkedIn"
-              className="nav-item-mobile"
-              href="https://linkedin.com/in/sheikh-rayhan-ahmed"
-              target="_blank"
-              label="LinkedIn"
-            />
-            <button className="dark-mode-button nav-item icon nav-item-mobile" onClick={toggleDark}>
-              <i className="fa fa-moon"></i>
-              <span> Dark Mode</span>
-            </button>
-          </div>
+          <MobileMenu isOpen={isOpen} />
         </nav>
       </header>
       <main>

@@ -11,7 +11,7 @@
   --button-bg: black;
   --button-text: white;
   --button-hover: rgb(35, 35, 35);
-  --border-color: rgb(170, 170, 170);
+  --border-color: rgb(185, 185, 185);
   --img-shadow: rgb(220, 220, 220);
   --input-bg: rgb(235, 235, 235);
   --input-focus: rgb(0, 0, 0);
@@ -24,7 +24,7 @@
   --secondary-text: rgb(220, 220, 220);
   --strong-text: rgb(240, 240, 240);
   --nav-bg: rgba(0, 0, 0, 0.6);
-  --link-hover: grey;
+  --link-hover: rgb(200, 200, 200);
   --button-bg: white;
   --button-text: black;
   --button-hover: rgb(215, 215, 215);
@@ -154,7 +154,7 @@ nav {
   @include glass-bg();
 
   @media (min-width: 725px) {
-    top: 4rem;
+    top: 3rem;
     max-width: 34rem;
     border: 0.5px solid var(--border-color);
     border-radius: 10px;
@@ -189,6 +189,10 @@ nav {
   font-size: 1.4rem;
   text-align: center;
   color: var(--text);
+
+  &:hover {
+    color: grey;
+  }
 }
 
 .menu-button {
@@ -208,6 +212,10 @@ main {
 section {
   display: grid;
   gap: 1rem;
+
+  a:hover {
+    color: var(--link-hover);
+  }
 }
 
 // HERO SECTION
