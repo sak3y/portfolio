@@ -59,6 +59,8 @@ function toggleDark() {
 }
 
 // Mobile + desktop menu
+let menuButton = "☰";
+
 const MobileMenu = ({ isOpen }) => {
   if (!isOpen) return null;
 
@@ -92,8 +94,6 @@ const MobileMenu = ({ isOpen }) => {
   );
 };
 
-const menuButton = "☰";
-
 const Menu = ({ toggleMenu }) => {
   return (
     <button className="menu-button nav-item icon hide" onClick={toggleMenu}>
@@ -105,7 +105,10 @@ const Menu = ({ toggleMenu }) => {
 // Default function
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => setIsOpen((prev) => !prev);
+  const toggleMenu = () => {
+    isOpen ? (menuButton = "☰") : (menuButton = "×");
+    setIsOpen((prev) => !prev);
+  };
 
   return (
     <>
@@ -135,7 +138,7 @@ export default function App() {
               label="Dark/light toggle"
               onClick={toggleDark}
             />
-            
+
             <Menu toggleMenu={toggleMenu} />
           </div>
 
