@@ -96,7 +96,10 @@ const MobileMenu = ({ isOpen }) => {
 
 const Menu = ({ toggleMenu }) => {
   return (
-    <button className="menu-button nav-item icon hide" onClick={toggleMenu}>
+    <button
+      className={"menu-button nav-item icon hide"}
+      onClick={toggleMenu}
+    >
       {menuButton}
     </button>
   );
@@ -107,6 +110,7 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     isOpen ? (menuButton = "☰") : (menuButton = "×");
+  
     setIsOpen((prev) => !prev);
   };
 
