@@ -3,17 +3,8 @@ import avatar from "/images/avatar.png";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-// Remmber dark/light mode
-// const updateTheme = () => {
-//   useEffect(() => {
-//      const handleTheme = () => {
-//       sessionStorage.setItem('currTheme', ;
-//     };
-//   })
-// }
-
 // Remember scroll position
-const updateScroll = () => {
+const UpdateScroll = () => {
   useEffect(() => {
     const handleScroll = () => {
       sessionStorage.setItem("scrollPosition", window.scrollY);
@@ -82,64 +73,102 @@ const Experience = ({ title, company, dateFrom, dateTo }) => {
 };
 
 // Light/dark toggle
-function toggleDark() {
-  const html = document.querySelector("html");
+function ThemeToggle({ className, title }) {
+  const [theme, setTheme] = useState(() => sessionStorage.getItem("currTheme") || "light");
 
-  html.classList.contains("dark") ? html.classList.remove("dark") : html.classList.add("dark");
+  useEffect(() => {
+    const html = document.documentElement;
+    if (theme === "dark") {
+      html.classList.add("dark");
+    } else {
+      html.classList.remove("dark");
+    }
+    sessionStorage.setItem("currTheme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
+
+  return (
+    <button className={`icon ${className}`} aria-label="Dark mode toggle" onClick={toggleTheme}>
+      <i className="fa fa-moon"></i>
+      <span>{title}</span>
+    </button>
+  );
 }
 
+// Slide in animation
+const SlideIn = ({ children, delay }) => {
+  return (
+    <motion.div
+      className="spring"
+      initial={{ opacity: 0, x: -60 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1.1, delay: delay || 0.3, type: "spring" }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
 // Mobile + desktop menu
-let menuButton = "☰";
+let menuButton = "≡";
 
 const MobileMenu = ({ isOpen }) => {
   if (!isOpen) return null;
 
   return (
     <div className="nav-mobile">
-      <Link
-        icon="fab fa-github"
-        title="GitHub"
-        className="nav-item-mobile"
-        href="https://github.com/sakey01"
-        target="_blank"
-        label="Github"
-      />
-      <Link
-        icon="fab fa-linkedin"
-        title="LinkedIn"
-        className="nav-item-mobile"
-        href="https://linkedin.com/in/sheikh-rayhan-ahmed"
-        target="_blank"
-        label="LinkedIn"
-      />
-      <Link
-        as="button"
-        icon="fa fa-moon"
-        title="Dark Mode"
-        className="nav-item-mobile"
-        label="Dark/light toggle"
-        onClick={toggleDark}
-      />
+      <SlideIn delay={0.1}>
+        <Link
+          icon="fab fa-github"
+          title="GitHub"
+          className="nav-item-mobile"
+          href="https://github.com/sakey01"
+          target="_blank"
+          label="Github"
+        />
+      </SlideIn>
+      <SlideIn delay={0.2}>
+        <Link
+          icon="fab fa-linkedin"
+          title="LinkedIn"
+          className="nav-item-mobile"
+          href="https://linkedin.com/in/sheikh-rayhan-ahmed"
+          target="_blank"
+          label="LinkedIn"
+        />
+      </SlideIn>
+      <SlideIn delay={0.3}>
+        <ThemeToggle title="Dark Mode" className="nav-item-mobile" />
+      </SlideIn>
     </div>
   );
 };
 
 const Menu = ({ toggleMenu }) => {
   return (
-    <button className={"menu-button nav-item icon hide"} onClick={toggleMenu}>
+    <button
+      className={"menu-button nav-item icon hide"}
+      onClick={toggleMenu}
+      style={{ fontSize: "1.8rem" }}
+    >
       {menuButton}
     </button>
   );
 };
 
-const SlideIn = ({ children, delay }) => {
+// slide up animation
+const SlideUp = ({ children, delay }) => {
   return (
     <motion.div
       className="spring"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true}}
-      transition={{ duration: 1.1, delay: delay || 0.3, type: "spring" }}
+      viewport={{ once: true }}
+      transition={{ duration: 1.1, delay: delay || 0.1, type: "spring" }}
     >
       {children}
     </motion.div>
@@ -148,11 +177,11 @@ const SlideIn = ({ children, delay }) => {
 
 // Default function
 export default function App() {
-  updateScroll();
+  UpdateScroll();
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
-    isOpen ? (menuButton = "☰") : (menuButton = "×");
+    isOpen ? (menuButton = "≡") : (menuButton = "×");
     setIsOpen((prev) => !prev);
   };
 
@@ -177,13 +206,7 @@ export default function App() {
               label="LinkedIn"
             />
 
-            <Link
-              as="button"
-              icon="fa fa-moon"
-              className="nav-item show"
-              label="Dark/light toggle"
-              onClick={toggleDark}
-            />
+            <ThemeToggle className="show" />
 
             <Menu toggleMenu={toggleMenu} />
           </div>
@@ -195,22 +218,22 @@ export default function App() {
       </header>
       <main>
         <section id="hero-section">
-          <SlideIn>
+          <SlideUp>
             <img src={avatar} alt="Profile" />
-          </SlideIn>
-          <SlideIn>
+          </SlideUp>
+          <SlideUp delay={0.2}>
             <h1>
               Hey, I'm Sheikh.
               <br />
               Aspiring Full-Stack Developer.
             </h1>
             <p className="paragraph">Here to design software that works</p>
-          </SlideIn>
-          <SlideIn>
+          </SlideUp>
+          <SlideUp delay={0.3}>
             <a href="#projects-section">View Projects</a>
-          </SlideIn>
+          </SlideUp>
         </section>
-        <SlideIn>
+        <SlideUp delay={0.4}>
           <section id="about-section">
             <h2>About</h2>
             <p className="paragraph">I'm a third years computer science student, born in the UK</p>
@@ -238,82 +261,77 @@ export default function App() {
               </a>
             </p>
           </section>
-        </SlideIn>
+        </SlideUp>
 
         <hr />
 
         <section id="projects-section" className="projects">
-          <SlideIn>
+          <SlideUp>
             <h2>Projects</h2>
-          </SlideIn>
-          <SlideIn>
+          </SlideUp>
+          <SlideUp>
             <Project
               title="Fintrack"
               description="A budgeting app (in progress)."
               href="https://fintrack-home.vercel.app"
             />
-          </SlideIn>
-          <SlideIn>
+          </SlideUp>
+          <SlideUp>
             <Project
               title="Whack-a-mole"
               description="Hit the mole to score a point."
               href="https://sakey01.github.io/whack-a-mole/"
             />
-          </SlideIn>
-          <SlideIn>
+          </SlideUp>
+          <SlideUp>
             <Project
               title="Github Viewer"
               description="A website that uses an API to view Github profiles."
               href="https://sakey01.github.io/githhub-api/"
             />
-          </SlideIn>
-          <SlideIn>
+          </SlideUp>
+          <SlideUp>
             <Project
               title="Gluten Free Destiny"
               description="A team based e-commerce store for people with gluten allergies."
               href="https://glutenfreedestiny.free.nf"
             />
-          </SlideIn>
+          </SlideUp>
         </section>
 
         <hr />
 
         <section id="education-section">
-          <SlideIn>
+          <SlideUp>
             <h2>Experiences</h2>
-          </SlideIn>
+          </SlideUp>
           <div className="experiences">
-            <SlideIn>
-              <Experience
-                title="Front-end Web Developer"
-                company=""
-                dateFrom="June 2025"
-                dateTo="Present"
-              />
-            </SlideIn>
-            <SlideIn>
+            <SlideUp>
+              <Experience title="Web Developer" company="" dateFrom="June 2025" dateTo="Present" />
+            </SlideUp>
+            <SlideUp>
               <Experience
                 title="Virtual Intern"
                 company="Bright Network"
                 dateFrom="July 2025"
                 dateTo=""
               />
-            </SlideIn>
-            <SlideIn>
+            </SlideUp>
+            <SlideUp>
               <Experience
                 title="Sales Representative "
                 company="Antzara Organisation"
                 dateFrom="June 2024"
                 dateTo="September 2024"
               />
-            </SlideIn>
+            </SlideUp>
           </div>
         </section>
 
         <hr />
 
         <footer>
-          <SlideIn>
+          <SlideUp>
             <h2>Get in Touch</h2>
             <p className="paragraph">
               Whether you're looking to say hello or hire some real talent. Feel free to send me a
@@ -325,7 +343,7 @@ export default function App() {
               <input type="text" placeholder=" Message" required />
               <input id="submit" type="submit" />
             </form>
-          </SlideIn>
+          </SlideUp>
 
           <hr />
 
