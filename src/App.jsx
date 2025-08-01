@@ -1,6 +1,36 @@
 import "./App.scss";
 import avatar from "/images/avatar.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+
+// Remmber dark/light mode
+// const updateTheme = () => {
+//   useEffect(() => {
+//      const handleTheme = () => {
+//       sessionStorage.setItem('currTheme', ;
+//     };
+//   })
+// }
+
+// Remember scroll position
+const updateScroll = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      sessionStorage.setItem("scrollPosition", window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    const savedPosition = sessionStorage.getItem("scrollPosition");
+    if (savedPosition) {
+      window.scrollTo(0, parseInt(savedPosition));
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+};
 
 // Link component
 const Link = ({ id, title, icon, href, label, target, className, as = "a", onClick }) => {
@@ -96,21 +126,33 @@ const MobileMenu = ({ isOpen }) => {
 
 const Menu = ({ toggleMenu }) => {
   return (
-    <button
-      className={"menu-button nav-item icon hide"}
-      onClick={toggleMenu}
-    >
+    <button className={"menu-button nav-item icon hide"} onClick={toggleMenu}>
       {menuButton}
     </button>
   );
 };
 
+const SlideIn = ({ children, delay }) => {
+  return (
+    <motion.div
+      className="spring"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true}}
+      transition={{ duration: 1.1, delay: delay || 0.3, type: "spring" }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
 // Default function
 export default function App() {
+  updateScroll();
+
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     isOpen ? (menuButton = "☰") : (menuButton = "×");
-  
     setIsOpen((prev) => !prev);
   };
 
@@ -153,109 +195,137 @@ export default function App() {
       </header>
       <main>
         <section id="hero-section">
-          <img src={avatar} alt="Profile" />
-          <h1>
-            Hey, I'm Sheikh.
-            <br />
-            Aspiring Full-Stack Developer.
-          </h1>
-          <p className="paragraph">Here to design software that works</p>
-          <a href="#projects-section">View Projects</a>
+          <SlideIn>
+            <img src={avatar} alt="Profile" />
+          </SlideIn>
+          <SlideIn>
+            <h1>
+              Hey, I'm Sheikh.
+              <br />
+              Aspiring Full-Stack Developer.
+            </h1>
+            <p className="paragraph">Here to design software that works</p>
+          </SlideIn>
+          <SlideIn>
+            <a href="#projects-section">View Projects</a>
+          </SlideIn>
         </section>
-
-        <section id="about-section">
-          <h2>About</h2>
-          <p className="paragraph">I'm a third years computer science student, born in the UK</p>
-          <p className="paragraph">
-            <strong>Here's the deal,</strong> I've worked on a range of projects, from collaborating
-            on an e-commerce store for gluten-free products, to designing my own portfolio and
-            building a budgeting app. And that's just the beginning.
-          </p>
-          <p className="paragraph">
-            I'm here because I like building and want to solve real problems.
-          </p>
-          <p className="paragraph">Two birds, one stone.</p>
-          <p className="paragraph">
-            When I'm not coding, I'm either working out, climbing rocks or hanging out with friends.
-          </p>
-          <p className="paragraph" style={{ textDecoration: "line-through" }}>
-            But you'll probably just find me binging the latest show on Netflix.
-          </p>
-          <p className="paragraph">
-            P.S: I'm also active on
-            <a target="_blank" href="https://github.com/sakey01">
-              {" "}
-              <span className="clicked-link">Github.</span>
-            </a>
-          </p>
-        </section>
+        <SlideIn>
+          <section id="about-section">
+            <h2>About</h2>
+            <p className="paragraph">I'm a third years computer science student, born in the UK</p>
+            <p className="paragraph">
+              <strong>Here's the deal,</strong> I've worked on a range of projects, from
+              collaborating on an e-commerce store for gluten-free products, to designing my own
+              portfolio and building a budgeting app. And that's just the beginning.
+            </p>
+            <p className="paragraph">
+              I'm here because I like building and want to solve real problems.
+            </p>
+            <p className="paragraph">Two birds, one stone.</p>
+            <p className="paragraph">
+              When I'm not coding, I'm either working out, climbing rocks or hanging out with
+              friends.
+            </p>
+            <p className="paragraph" style={{ textDecoration: "line-through" }}>
+              But you'll probably just find me binging the latest show on Netflix.
+            </p>
+            <p className="paragraph">
+              P.S: I'm also active on
+              <a target="_blank" href="https://github.com/sakey01">
+                {" "}
+                <span className="clicked-link">Github.</span>
+              </a>
+            </p>
+          </section>
+        </SlideIn>
 
         <hr />
 
         <section id="projects-section" className="projects">
-          <h2>Projects</h2>
-          <Project
-            title="Fintrack"
-            description="A budgeting app (in progress)."
-            href="https://fintrack-home.vercel.app"
-          />
-          <Project
-            title="Whack-a-mole"
-            description="Hit the mole to score a point."
-            href="https://sakey01.github.io/whack-a-mole/"
-          />
-          <Project
-            title="Github Viewer"
-            description="A website that uses an API to view Github profiles."
-            href="https://sakey01.github.io/githhub-api/"
-          />
-          <Project
-            title="Gluten Free Destiny"
-            description="A team based e-commerce store for people with gluten allergies."
-            href="https://glutenfreedestiny.free.nf"
-          />
+          <SlideIn>
+            <h2>Projects</h2>
+          </SlideIn>
+          <SlideIn>
+            <Project
+              title="Fintrack"
+              description="A budgeting app (in progress)."
+              href="https://fintrack-home.vercel.app"
+            />
+          </SlideIn>
+          <SlideIn>
+            <Project
+              title="Whack-a-mole"
+              description="Hit the mole to score a point."
+              href="https://sakey01.github.io/whack-a-mole/"
+            />
+          </SlideIn>
+          <SlideIn>
+            <Project
+              title="Github Viewer"
+              description="A website that uses an API to view Github profiles."
+              href="https://sakey01.github.io/githhub-api/"
+            />
+          </SlideIn>
+          <SlideIn>
+            <Project
+              title="Gluten Free Destiny"
+              description="A team based e-commerce store for people with gluten allergies."
+              href="https://glutenfreedestiny.free.nf"
+            />
+          </SlideIn>
         </section>
 
         <hr />
 
         <section id="education-section">
-          <h2>Experiences</h2>
+          <SlideIn>
+            <h2>Experiences</h2>
+          </SlideIn>
           <div className="experiences">
-            <Experience
-              title="Front-end Web Developer"
-              company=""
-              dateFrom="June 2025"
-              dateTo="Present"
-            />
-            <Experience
-              title="Virtual Intern"
-              company="Bright Network"
-              dateFrom="July 2025"
-              dateTo=""
-            />
-            <Experience
-              title="Sales Representative "
-              company="Antzara Organisation"
-              dateFrom="June 2024"
-              dateTo="September 2024"
-            />
+            <SlideIn>
+              <Experience
+                title="Front-end Web Developer"
+                company=""
+                dateFrom="June 2025"
+                dateTo="Present"
+              />
+            </SlideIn>
+            <SlideIn>
+              <Experience
+                title="Virtual Intern"
+                company="Bright Network"
+                dateFrom="July 2025"
+                dateTo=""
+              />
+            </SlideIn>
+            <SlideIn>
+              <Experience
+                title="Sales Representative "
+                company="Antzara Organisation"
+                dateFrom="June 2024"
+                dateTo="September 2024"
+              />
+            </SlideIn>
           </div>
         </section>
 
         <hr />
 
         <footer>
-          <h2>Get in Touch</h2>
-          <p className="paragraph">
-            Whether you're looking to say hello or hire some real talent. Feel free to send me a
-            message and I'll get back to you as soon as I can.
-          </p>
-          <form id="contact-form">
-            <input type="name" placeholder="Enter name" required />
-            <input type="email" placeholder="Enter email" required />
-            <input type="text" placeholder=" Message" required />
-            <input id="submit" type="submit" />
-          </form>
+          <SlideIn>
+            <h2>Get in Touch</h2>
+            <p className="paragraph">
+              Whether you're looking to say hello or hire some real talent. Feel free to send me a
+              message and I'll get back to you as soon as I can.
+            </p>
+            <form id="contact-form">
+              <input type="name" placeholder="Enter name" required />
+              <input type="email" placeholder="Enter email" required />
+              <input type="text" placeholder=" Message" required />
+              <input id="submit" type="submit" />
+            </form>
+          </SlideIn>
 
           <hr />
 
