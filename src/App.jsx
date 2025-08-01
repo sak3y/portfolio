@@ -2,6 +2,7 @@ import "./App.scss";
 import avatar from "/images/avatar.png";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useForm, ValidationError } from "@formspree/react";
 
 // Remember scroll position
 const UpdateScroll = () => {
@@ -71,6 +72,31 @@ const Experience = ({ title, company, dateFrom, dateTo }) => {
     </div>
   );
 };
+
+
+// Form action
+function Form() {
+  const [state, handleSubmit] = useForm("meozlqye");
+  if (state.succeeded) {
+    return <p>Submitted</p>;
+  }
+  return (
+    <form onSubmit={handleSubmit}>
+      <input id="name" type="name" name="name" placeholder="Enter name" required />
+      <ValidationError prefix="Name" field="name" errors={state.errors} />
+
+      <input id="email" type="email" name="email" placeholder="Enter email" required />
+      <ValidationError prefix="Email" field="email" errors={state.errors} />
+
+      <textarea id="message" name="message" placeholder=" Message" required />
+      <ValidationError prefix="Message" field="message" errors={state.errors} />
+
+      <button id="submit" type="submit" disabled={state.submitting}>
+        Submit
+      </button>
+    </form>
+  );
+}
 
 // Light/dark toggle
 function ThemeToggle({ className, title }) {
@@ -337,12 +363,7 @@ export default function App() {
               Whether you're looking to say hello or hire some real talent. Feel free to send me a
               message and I'll get back to you as soon as I can.
             </p>
-            <form id="contact-form">
-              <input type="name" placeholder="Enter name" required />
-              <input type="email" placeholder="Enter email" required />
-              <input type="text" placeholder=" Message" required />
-              <input id="submit" type="submit" />
-            </form>
+            <Form />
           </SlideUp>
 
           <hr />
