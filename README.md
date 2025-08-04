@@ -1,3 +1,5 @@
-The second version of my portfolio
+## Version two of my portfolio
 
-Built with React, Vite and SCSS
+Built with React, Vite and SCSS.
+
+Other dependancies include framer motion and formspree.
