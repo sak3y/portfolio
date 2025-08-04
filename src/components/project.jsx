@@ -6,7 +6,7 @@ const Project = ({ title, description, href }) => {
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
-      <a href={href} target="_blank" rel="noopener noreferrer" title="View Fintrack website">
+      <a href={href} className="view" target="_blank" rel="noopener noreferrer" title="View Fintrack website">
         View <span>&rsaquo;</span>
       </a>
     </div>

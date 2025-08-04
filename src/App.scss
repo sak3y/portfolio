@@ -60,6 +60,7 @@
   border-radius: 8px;
   text-wrap: nowrap;
   text-align: center;
+  letter-spacing: 0;
   transition: all 0.07s ease-in-out;
 
   &:hover {
@@ -178,9 +179,12 @@ main {
 
   a {
     @include primary-button();
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
     width: 20%;
 
-    @media (max-width: 727px) {
+    @media (max-width: 802px) {
       width: 80%;
     }
   }
@@ -323,6 +327,19 @@ button {
 .visited-link {
   text-decoration: underline;
   color: var(--visited-link);
+}
+
+.view {
+  display: flex;
+  margin-top: 1rem;
+  width: max-content;
+  gap: 5px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--button-hover);
+    gap: 8px;
+  }
 }
 
 strong {

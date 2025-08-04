@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 
 // Sliding animations on view/scroll
-const SlideUp = ({ children, delay }) => {
+const SlideUp = ({ children, delay, variants }) => {
   return (
     <motion.div
       className="spring"
+      variants={variants}
       initial={{ opacity: 0, y: 120 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -30,4 +31,4 @@ const SlideIn = ({ children, delay }) => {
 };
 
 export default SlideUp;
-export {SlideIn};
+export { SlideIn };

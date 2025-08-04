@@ -9,6 +9,11 @@ import Experience from "./components/experience";
 import Project from "./components/project";
 import Footer from "./components/footer";
 
+const variant1 = {
+  hidden: { opacity: 0, y: 120 },
+  visible: { opacity: 1, y: 0 },
+};
+
 // MAIN DEFAULT function
 export default function App() {
   UpdateScroll();
@@ -20,10 +25,10 @@ export default function App() {
       </header>
       <main>
         <section id="hero-section">
-          <SlideUp>
+          <SlideUp variants={variant1}>
             <img src={avatar} alt="Profile" />
           </SlideUp>
-          <SlideUp delay={0.2}>
+          <SlideUp variants={variant1} delay={0.2}>
             <h1>
               Hey, I'm Sheikh.
               <br />
@@ -31,11 +36,11 @@ export default function App() {
             </h1>
             <p className="paragraph">Designing software that works.</p>
           </SlideUp>
-          <SlideUp delay={0.3}>
+          <SlideUp variants={variant1} delay={0.3}>
             <a href="#projects-section">View Projects</a>
           </SlideUp>
         </section>
-        <SlideUp delay={0.4}>
+        <SlideUp variants={variant1} delay={0.4}>
           <section id="about-section">
             <h2>About</h2>
             <p className="paragraph">I'm a third years computer science student, born in the UK</p>
