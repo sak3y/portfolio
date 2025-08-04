@@ -1,4 +1,4 @@
-import Link from "./link";
+import NavItem from "./navItem";
 import ThemeToggle from "./themeToggle";
 import MobileMenu from "./mobileMenu";
 import { useState } from "react";
@@ -7,7 +7,7 @@ const Menu = ({ isOpen, toggleMenu }) => {
   const menuButton = isOpen ? "×" : "≡";
 
   return (
-    <button className={"menu-button icon hide"} onClick={toggleMenu} style={{ fontSize: "1.8rem" }}>
+    <button className={"icon hide"} onClick={toggleMenu} style={{ fontSize: "2rem" }}>
       {menuButton}
     </button>
   );
@@ -15,7 +15,7 @@ const Menu = ({ isOpen, toggleMenu }) => {
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
@@ -23,15 +23,15 @@ const Navigation = () => {
   return (
     <nav>
       <div className="nav-group">
-        <Link id="home-button" icon="fa fa-home" href="#" label="home" />
-        <Link
+        <NavItem id="home-button" icon="fa fa-home" href="#" label="home" />
+        <NavItem
           icon="fab fa-github"
           href="https://github.com/sakey01"
           className="show"
           target="_blank"
           label="Github"
         />
-        <Link
+        <NavItem
           icon="fab fa-linkedin"
           href="https://linkedin.com/in/sheikh-rayhan-ahmed"
           className="show"

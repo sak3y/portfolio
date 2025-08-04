@@ -1,6 +1,6 @@
 // Link component
-const Link = ({ id, title, icon, href, label, target, className, as = "a", onClick }) => {
-  const classes = `${id} ${className} icon`;
+const Link = ({ title, icon, href, label, target, className, as = "a", onClick }) => {
+  const classes = `${className} icon`;
 
   if (as === "button") {
     return (

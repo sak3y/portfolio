@@ -121,8 +121,19 @@ nav {
 .nav-mobile {
   display: grid;
 
-  .nav-item-mobile {
-    padding: 1.5rem;
+  .mobile-icon {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    text-align: left;
+    width: 100vw;
+    padding: 1rem;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: translateX(5px);
+      backdrop-filter: blur(16px);
+    }
   }
 
   span {
@@ -161,6 +172,10 @@ main {
     box-shadow: 0 4px 90px var(--img-shadow);
   }
 
+  p {
+    margin-top: 1rem;
+  }
+
   a {
     @include primary-button();
     width: 20%;
@@ -175,7 +190,7 @@ main {
 #about-section {
   display: grid;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 // PROJECT AND EXPERIENCE CLASS
@@ -271,13 +286,13 @@ a {
 
 .icon {
   cursor: pointer;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-align: center;
   color: var(--text);
-}
 
-.menu-icon {
-  font-size: 2rem;
+  @media (min-width: 726px) {
+    font-size: 1.4rem;
+  }
 }
 
 h1 {
