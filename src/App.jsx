@@ -1,58 +1,22 @@
 import "./App.scss";
-import { useState } from "react";
-import avatar from "/images/avatar.png";
-import SlideUp, { SlideIn } from "./components/animations";
-import UpdateScroll from "./components/updateScroll";
-import ThemeToggle from "./components/themeToggle";
 
-import Menu from "./components/menu";
-import MobileMenu from "./components/mobileMenu";
-import Link from "./components/link";
+import avatar from "/images/avatar.png";
+import SlideUp from "./components/animations";
+import UpdateScroll from "./components/updateScroll";
+
+import Navigation from "./components/navigation";
 import Experience from "./components/experience";
 import Project from "./components/project";
-import Form from "./components/form";\
+import Footer from "./components/footer";
 
 // MAIN DEFAULT function
 export default function App() {
   UpdateScroll();
-  let menu
-
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => {
-    isOpen ? (menuButton = "≡") : (menuButton = "×");
-    setIsOpen((prev) => !prev);
-  };
 
   return (
     <>
       <header>
-        <nav>
-          <div className="nav-group">
-            <Link id="home-button" icon="fa fa-home" href="#" label="home" />
-            <Link
-              icon="fab fa-github"
-              href="https://github.com/sakey01"
-              className="show"
-              target="_blank"
-              label="Github"
-            />
-            <Link
-              icon="fab fa-linkedin"
-              href="https://linkedin.com/in/sheikh-rayhan-ahmed"
-              className="show"
-              target="_blank"
-              label="LinkedIn"
-            />
-
-            <ThemeToggle className="show" />
-
-            <Menu toggleMenu={toggleMenu} />
-          </div>
-
-          <hr className="hide nav-menu-border" />
-
-          <MobileMenu isOpen={isOpen} />
-        </nav>
+        <Navigation />
       </header>
       <main>
         <section id="hero-section">
@@ -168,20 +132,7 @@ export default function App() {
 
         <hr />
 
-        <footer>
-          <SlideUp>
-            <h2>Get in Touch</h2>
-            <p className="paragraph">
-              Whether you're looking to say hello or hire some real talent. Feel free to send me a
-              message and I'll get back to you as soon as I can.
-            </p>
-            <Form />
-          </SlideUp>
-
-          <hr />
-
-          <div className="copywrite">Copywrite © 2025 Sheikh Ahmed. All rights reserved.</div>
-        </footer>
+        <Footer />
       </main>
     </>
   );
