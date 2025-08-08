@@ -1,20 +1,13 @@
 import "./App.scss";
-
 import avatar from "/images/avatar.png";
-import SlideUp from "./components/animations";
+import SlideUp, { SlideUpInitial } from "./components/animations";
 import UpdateScroll from "./components/updateScroll";
-
 import Navigation from "./components/navigation";
 import Experience from "./components/experience";
 import Project from "./components/project";
 import Footer from "./components/footer";
 
-const variant1 = {
-  hidden: { opacity: 0, y: 120 },
-  visible: { opacity: 1, y: 0 },
-};
-
-// MAIN DEFAULT function
+// ---- Main Function ----
 export default function App() {
   UpdateScroll();
 
@@ -23,24 +16,26 @@ export default function App() {
       <header>
         <Navigation />
       </header>
+
       <main>
         <section id="hero-section">
-          <SlideUp variants={variant1}>
+          <SlideUpInitial>
             <img src={avatar} alt="Profile" />
-          </SlideUp>
-          <SlideUp variants={variant1} delay={0.2}>
+          </SlideUpInitial>
+          <SlideUpInitial delay={0.2}>
             <h1>
               Hey, I'm Sheikh.
               <br />
               Aspiring Full-Stack Developer.
             </h1>
             <p className="paragraph">Designing software that works.</p>
-          </SlideUp>
-          <SlideUp variants={variant1} delay={0.3}>
+          </SlideUpInitial>
+          <SlideUpInitial delay={0.3}>
             <a href="#projects-section">View Projects</a>
-          </SlideUp>
+          </SlideUpInitial>
         </section>
-        <SlideUp variants={variant1} delay={0.4}>
+
+        <SlideUpInitial delay={0.4}>
           <section id="about-section">
             <h2>About</h2>
             <p className="paragraph">I'm a third years computer science student, born in the UK</p>
@@ -68,7 +63,7 @@ export default function App() {
               </a>
             </p>
           </section>
-        </SlideUp>
+        </SlideUpInitial>
 
         <hr />
 

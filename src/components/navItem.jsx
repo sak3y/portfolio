@@ -1,4 +1,3 @@
-// Link component
 const Link = ({ title, icon, href, label, target, className, as = "a", onClick }) => {
   const classes = `${className} icon`;
 

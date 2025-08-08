@@ -1,4 +1,3 @@
-// Project component
 const Project = ({ title, description, href }) => {
   return (
     <div className="project">

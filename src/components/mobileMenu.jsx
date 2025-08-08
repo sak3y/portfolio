@@ -2,7 +2,6 @@ import Link from "./navItem";
 import { SlideIn } from "./animations";
 import ThemeToggle from "./themeToggle";
 
-// Mobile menu
 const MobileMenu = ({ isOpen }) => {
   if (!isOpen) return null;
 

@@ -1,4 +1,3 @@
-// Experience components
 const Experience = ({ title, company, dateFrom, dateTo }) => {
   return (
     <div className="experience">
