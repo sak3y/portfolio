@@ -27,6 +27,16 @@ const MobileMenu = ({ isOpen }) => {
           label="LinkedIn"
         />
       </SlideIn>
+      <SlideIn>
+        <Link
+          icon="fas fa-file-alt"
+          title="Blog"
+          href="https://sakey01.github.io/blog"
+          className="mobile-icon"
+          target="_blank"
+          label="Blog"
+        />
+      </SlideIn>
       <SlideIn delay={0.3}>
         <ThemeToggle title="Dark Mode" className="mobile-icon" />
       </SlideIn>
