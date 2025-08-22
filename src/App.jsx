@@ -42,8 +42,9 @@ export default function App() {
             <p className="paragraph">
               <strong>Here's the deal,</strong> I've worked on a range of projects, from
               collaborating on an e-commerce store for gluten-free products, to designing my own
-              portfolio and building a budgeting app. And that's just the beginning.
+              portfolio and building my own blog page.
             </p>
+            <p className="paragraph">And that's just the beginning.</p>
             <p className="paragraph">
               I'm here because I like building and want to solve real problems.
             </p>
@@ -73,29 +74,29 @@ export default function App() {
           </SlideUp>
           <SlideUp>
             <Project
-              title="Log-reader"
-              description="A python script that return a list of IP addresses making the most server requests."
-              href="https://github.com/sakey01/log-reader"
+              title="Blog Page"
+              description="A personal blog ranging from from everyday shower thoughts to general tech tips."
+              href="https://sakey01.github.io/blog/"
             />
           </SlideUp>
           <SlideUp>
             <Project
-              title="Whack-a-mole"
-              description="Hit the mole and score a point."
-              href="https://sakey01.github.io/whack-a-mole/"
+              title="Tic Tac Toe"
+              description="Play as either 'X' or 'O' and get three in a row to win. "
+              href="https://sakey01.github.io/tic-tac-toe/"
             />
           </SlideUp>
           <SlideUp>
             <Project
-              title="Github Viewer"
-              description="A website that uses Github's API to view profiles."
+              title="Github Profile Viewer"
+              description="A website that uses Github's native API to view profiles."
               href="https://sakey01.github.io/githhub-api/"
             />
           </SlideUp>
           <SlideUp>
             <Project
               title="Gluten Free Destiny"
-              description="A team based e-commerce store for people with gluten allergies."
+              description="A team based that replicates an e-commerce store that sells gluten free products"
               href="https://glutenfreedestiny.free.nf"
             />
           </SlideUp>
@@ -112,12 +113,7 @@ export default function App() {
               <Experience title="Web Developer" company="" dateFrom="June 2025" dateTo="Present" />
             </SlideUp>
             <SlideUp>
-              <Experience
-                title="Virtual Intern"
-                company="Bright Network"
-                dateFrom="July 2025"
-                dateTo=""
-              />
+              <Experience title="Virtual Intern" company="Bright Network" dateFrom="July 2025" />
             </SlideUp>
             <SlideUp>
               <Experience

@@ -38,6 +38,13 @@ const Navigation = () => {
           target="_blank"
           label="LinkedIn"
         />
+         <NavItem
+          icon="fas fa-file-alt"
+          href="https://sakey01.github.io/blog"
+          className="show"
+          target="_blank"
+          label="Blog"
+        />
 
         <ThemeToggle className="show" />
 

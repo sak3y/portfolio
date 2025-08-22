@@ -15,7 +15,7 @@
   --img-shadow: rgb(220, 220, 220);
   --input-bg: rgb(245, 245, 245);
   --input-focus: rgb(0, 0, 0);
-  --visited-link: rgb(150, 0, 150);
+  --visited-link: rgb(175, 0, 175);
 }
 
 .dark {
@@ -219,6 +219,7 @@ footer {
   .spring {
     display: grid;
     gap: 2rem;
+    justify-content: center;
   }
 
   h2,
@@ -351,6 +352,10 @@ hr {
   margin: 2rem auto;
   border-bottom: 0.8px solid var(--hr-color);
   opacity: 0.4;
+}
+
+#footer-description {
+  margin: 0 4rem;
 }
 
 #submit {
