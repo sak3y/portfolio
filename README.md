@@ -1,20 +1,27 @@
-## Portfolio
+# Portfolio
 
 Version two of my porfolio.
 
-### Built with 
-React, 
-Vite 
-and SCSS.
+## 🚀 Features
 
-### Dependencies
-- SASS
-- Framer motion
-- Formspree
+- A custom toggle theme
+- Reactive animations
+- About sections
+- Project showcase
+- Form message submission
 
-### Screenshots
-<img width="818" height="577" alt="Screenshot 2025-08-22 at 21 24 47" src="https://github.com/user-attachments/assets/1c4e4a3c-708c-4de6-93b2-60befa4b3df9" />
+## 🛠️ Dependencies
 
-### License
+```React```
+```Vite```
+```SCSS```
+```Framer motion```
+```Formspree```
 
-Copywrite © 2025 Sheikh Ahmed. All rights reserved.
+## 🎥 Demo
+
+https://github.com/user-attachments/assets/2c111983-0e97-467d-95a5-5031362918df
+
+###  [View Portfolio](https://sheikh-ahm.vercel.app/)
+
+##### © 2025 Sheikh Ahmed. All rights reserved.
