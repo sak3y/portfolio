@@ -1,6 +1,6 @@
-# Portfolio
+# 🌐 Portfolio
 
-Version two of my porfolio.
+Second version of my porfolio website.
 
 ## 🚀 Features
 
@@ -25,3 +25,4 @@ https://github.com/user-attachments/assets/2c111983-0e97-467d-95a5-5031362918df
 ###  [View Portfolio](https://sheikh-ahm.vercel.app/)
 
 ##### © 2025 Sheikh Ahmed. All rights reserved.
+
