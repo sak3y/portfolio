@@ -18,7 +18,7 @@ Second version of my porfolio website.
 ```Framer motion```
 ```Formspree```
 
-## 🎥 Demo
+## 🎥 video
 
 https://github.com/user-attachments/assets/2c111983-0e97-467d-95a5-5031362918df
 
@@ -27,6 +27,7 @@ https://github.com/user-attachments/assets/2c111983-0e97-467d-95a5-5031362918df
 
 
 ##### © 2025 Sheikh Ahmed. All rights reserved.
+
 
 
 
