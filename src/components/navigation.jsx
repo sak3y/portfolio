@@ -26,7 +26,7 @@ const Navigation = () => {
         <NavItem id="home-button" icon="fa fa-home" href="#" label="home" />
         <NavItem
           icon="fab fa-github"
-          href="https://github.com/sakey01"
+          href="https://github.com/sak3y"
           className="show"
           target="_blank"
           label="Github"
@@ -40,7 +40,7 @@ const Navigation = () => {
         />
         <NavItem
           icon="fas fa-file-alt"
-          href="https://sakey01.github.io/blog"
+          href="https://sak3y.github.io/blog"
           className="show"
           target="_blank"
           label="Blog"

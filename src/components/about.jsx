@@ -24,7 +24,7 @@ const About = () => {
         </p>
         <p className="paragraph">
           P.S: I'm also active on{" "}
-          <a target="_blank" href="https://github.com/sakey01">
+          <a target="_blank" href="https://github.com/sak3y">
             <span className="visited-link">Github.</span>
           </a>
         </p>
