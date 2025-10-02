@@ -8,7 +8,7 @@ import Projects from "./components/projects";
 import Experiences from "./components/experiences";
 
 export default function App() {
-  // Updates scorll position to figure out when to do the animations
+  // Updates scorll position as user scrolls and plays animations
   UpdateScroll();
 
   return (
