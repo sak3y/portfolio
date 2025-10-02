@@ -1,5 +1,5 @@
 import NavItem from "./navItem";
-import ThemeToggle from "./themeToggle";
+import ThemeToggle from "./toggleTheme";
 import MobileMenu from "./mobileMenu";
 import { useState } from "react";
 
@@ -38,7 +38,7 @@ const Navigation = () => {
           target="_blank"
           label="LinkedIn"
         />
-         <NavItem
+        <NavItem
           icon="fas fa-file-alt"
           href="https://sakey01.github.io/blog"
           className="show"

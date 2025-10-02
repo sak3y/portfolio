@@ -2,33 +2,21 @@
 
 Second version of my porfolio website.
 
-## 🚀 Features
+## Features 🚀
 
-- A custom toggle theme
+- A dark/light toggle
 - Reactive animations
-- About sections
-- Project showcase
-- Form message submission
+- Message with Formspree
+- Responsive design
 
-## 🛠️ Dependencies
+## Dependencies 🛠️
 
-```React```
-```Vite```
-```SCSS```
-```Framer motion```
-```Formspree```
+`React` `Vite` `SCSS` `Framer motion` `Formspree`
 
-## 🎥 video
+## Video 🎥
 
 https://github.com/user-attachments/assets/2c111983-0e97-467d-95a5-5031362918df
 
-
-###  [Visit Portfolio Here](https://sheikh-ahm.vercel.app/)
-
+### [Visit Portfolio Here](https://sheikh-ahm.vercel.app/)
 
 ##### © 2025 Sheikh Ahmed. All rights reserved.
-
-
-
-
-

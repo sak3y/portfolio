@@ -3,7 +3,7 @@ import Form from "./form";
 
 const footer = () => {
   return (
-    <footer>
+    <footer id="footer-section">
       <SlideUp>
         <h2>Get in Touch</h2>
         <p id="footer-description" className="paragraph">

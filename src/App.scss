@@ -213,6 +213,10 @@ main {
 }
 
 // FOOTER
+#footer-section {
+  @include flex-center();
+}
+
 footer {
   max-width: 36rem;
 
@@ -224,6 +228,8 @@ footer {
 
   h2,
   p {
+    display: flex;
+    align-items: center;
     text-align: center;
   }
 
