@@ -12,7 +12,7 @@ export default function App() {
   UpdateScroll();
 
   return (
-    <>
+    <div className="body">
       <header>
         <Navigation />
       </header>
@@ -26,6 +26,6 @@ export default function App() {
         <hr />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

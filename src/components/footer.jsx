@@ -3,13 +3,15 @@ import Form from "./form";
 
 const footer = () => {
   return (
-    <footer id="footer-section">
+    <footer>
       <SlideUp>
-        <h2>Get in Touch</h2>
-        <p id="footer-description" className="paragraph">
-          Whether you're looking to say hello or hire some real talent. Feel free to send me a
-          message and I'll get back to you as soon as I can.
-        </p>
+        <div className="content">
+          <h2>Get in Touch</h2>
+          <p style={{width: "70%"}} className="paragraph">
+            Whether you're looking to say hello or hire some real talent. Feel free to send me a
+            message and I'll get back to you as soon as I can.
+          </p>
+        </div>
         <Form />
       </SlideUp>
 

@@ -12,7 +12,7 @@ const MobileMenu = ({ isOpen }) => {
           icon="fab fa-github"
           className="mobile-icon"
           title="GitHub"
-          href="https://github.com/sakey01"
+          href="https://github.com/sak3y"
           target="_blank"
           label="Github"
         />
@@ -31,7 +31,7 @@ const MobileMenu = ({ isOpen }) => {
         <Link
           icon="fas fa-file-alt"
           title="Blog"
-          href="https://sakey01.github.io/blog"
+          href="https://sak3y1.github.io/blog"
           className="mobile-icon"
           target="_blank"
           label="Blog"

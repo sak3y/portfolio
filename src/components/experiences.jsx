@@ -2,26 +2,37 @@ import SlideUp from "./animations";
 import Experience from "./experience";
 
 const Experiences = () => {
+  const experiencesCard = [
+    {
+      title: "Telephone Interviewer",
+      company: "IFF Research",
+      dateFrom: "October 2025",
+      dateTo: "Present",
+    },
+    {
+      title: "Freelance Web Developer",
+      company: "",
+      dateFrom: "July 2025",
+      dateTo: "Present",
+    },
+  ];
+
   return (
     <section id="experience-section">
       <SlideUp>
-        <h2>Experiences</h2>
+        <h2 style={{ textAlign: "center", marginBottom: "6rem" }}>Experiences</h2>
       </SlideUp>
       <div className="experiences">
-        <SlideUp>
-          <Experience title="Web Developer" company="" dateFrom="June 2025" dateTo="Present" />
-        </SlideUp>
-        <SlideUp>
-          <Experience title="Virtual Intern" company="Bright Network" dateFrom="July 2025" />
-        </SlideUp>
-        <SlideUp>
-          <Experience
-            title="Sales Representative "
-            company="Antzara Organisation"
-            dateFrom="June 2024"
-            dateTo="September 2024"
-          />
-        </SlideUp>
+        {experiencesCard.map((e) => (
+          <SlideUp key={e.title}>
+            <Experience
+              title={e.title}
+              company={e.company}
+              dateFrom={e.dateFrom}
+              dateTo={e.dateTo}
+            />
+          </SlideUp>
+        ))}
       </div>
     </section>
   );
