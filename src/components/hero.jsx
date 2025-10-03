@@ -1,4 +1,4 @@
-import avatar from "./assets/avatar.png";
+import avatar from "/src/assets/avatar.png";
 import { SlideUpInitial } from "./animations";
 
 const Hero = () => {
