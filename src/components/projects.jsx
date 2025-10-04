@@ -23,14 +23,14 @@ const Projects = () => {
       description: "A Netflix clone, built with React, TypeScript and Tailwind 🍿",
       ghub: "https://github.com/sak3y/netflix-clone",
       url: "https://netflx-sheikh-ahm.netlify.app/",
-      videopath: "/src/assets/videos/nflixclone25.mp4",
+      videopath: "/videos/nflixclone25.mp4",
     },
     {
       title: "Notes App",
       description: "Lets you take your notes and convert it to markdown.",
       ghub: "https://github.com/sak3y/notes-app",
       url: "https://sak3y.github.io/notes-app/",
-      videopath: "/src/assets/videos/notesapp25.mp4",
+      videopath: "/videos/notesapp25.mp4",
     },
   ];
 
