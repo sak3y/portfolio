@@ -9,14 +9,14 @@ const Projects = () => {
         "A personal blog ranging from from everyday shower thoughts to general tech tips.",
       ghub: "https://github.com/sak3y/blog",
       url: "https://sak3y.github.io/blog/",
-      videopath: "",
+      videopath: "/videos/",
     },
     {
       title: "Tetris",
-      description: "A Tetris tutorial to get an introduction into game development.",
+      description: "A Tetris tutorial project with my own personal touch.",
       ghub: "https://github.com/sak3y/tetris",
       url: "https://sak3y.github.io/tetris/",
-      videopath: "",
+      videopath: "/videos/tetristut25.mp4",
     },
     {
       title: "Netflix Clone",
@@ -27,10 +27,17 @@ const Projects = () => {
     },
     {
       title: "Notes App",
-      description: "Lets you take your notes and convert it to markdown.",
+      description: "Lets you store notes or view it as markdown.",
       ghub: "https://github.com/sak3y/notes-app",
       url: "https://sak3y.github.io/notes-app/",
       videopath: "/videos/notesapp25.mp4",
+    },
+    {
+      title: "GiHhub Tracker",
+      description: "Ever struggled to find someone on GitHub. Now all you need is there username.",
+      ghub: "https://github.com/sak3y/github-profile-viewer",
+      url: "https://sak3y.github.io/github-profile-viewer/",
+      videopath: "/videos/ghubfinder25.mp4",
     },
   ];
 
