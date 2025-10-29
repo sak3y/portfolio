@@ -1,18 +1,18 @@
-import SlideUp from "./animations";
-import Experience from "./experience";
+import SlideUp from "../components/animations";
+import Experience from "../components/experience";
 
 const Experiences = () => {
   const experiencesCard = [
     {
       title: "Telephone Interviewer",
       company: "IFF Research",
-      dateFrom: "October 2025",
+      dateFrom: "September 2025",
       dateTo: "Present",
     },
     {
       title: "Freelance Web Developer",
-      company: "",
-      dateFrom: "July 2025",
+      company: "Self-employed",
+      dateFrom: "October 2025",
       dateTo: "Present",
     },
   ];

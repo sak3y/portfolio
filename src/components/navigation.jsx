@@ -7,7 +7,7 @@ const Menu = ({ isOpen, toggleMenu }) => {
   const menuButton = isOpen ? "×" : "≡";
 
   return (
-    <button className={"icon hide"} onClick={toggleMenu} style={{ fontSize: "2rem" }}>
+    <button className={"icon hide"} onClick={toggleMenu} style={{ fontSize: "1.4rem" }}>
       {menuButton}
     </button>
   );
@@ -40,7 +40,7 @@ const Navigation = () => {
         />
         <NavItem
           icon="fas fa-file-alt"
-          href="https://sak3y.github.io/blog"
+          href="https://v2-blog-fb149.firebaseapp.com"
           className="show"
           target="_blank"
           label="Blog"

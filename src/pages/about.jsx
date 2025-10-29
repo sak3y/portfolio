@@ -1,17 +1,17 @@
-import { SlideUpInitial } from "./animations";
+import { SlideUpInitial } from "../components/animations";
 
 const About = () => {
   return (
     <SlideUpInitial delay={0.4}>
       <section id="about-section">
         <h2>About</h2>
-        <p className="paragraph">I'm a third-year computer science student, born in the UK</p>
+        <p className="paragraph">I'm a third-year computer science student, raised in the UK</p>
         <p className="paragraph">
           <strong>Here's the deal,</strong> I've worked on a range of projects, from collaborating
-          on an e-commerce store for gluten-free products, to designing my own portfolio and
-          building my own blog page.
+          on an e-commerce store for gluten-free products, to designing my own portfolio website to
+          building my own chrome-extension.
         </p>
-        <p className="paragraph">And that's just the beginning.</p>
+        <p className="paragraph">And that's just the start.</p>
         <p className="paragraph">
           I'm here because I like building and want to solve real problems.
         </p>

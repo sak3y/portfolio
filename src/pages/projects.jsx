@@ -1,15 +1,21 @@
-import SlideUp from "./animations";
-import Project from "./project";
+import SlideUp from "../components/animations";
+import Project from "../components/project";
 
 const Projects = () => {
   const projectCard = [
     {
-      title: "Blog Page",
+      title: "v2-Blog",
       description:
         "A personal blog ranging from from everyday shower thoughts to general tech tips.",
       ghub: "https://github.com/sak3y/blog",
       url: "https://sak3y.github.io/blog/",
-      videopath: "/videos/",
+      videopath: "/videos/v2-blog2910.mp4",
+    },
+    {
+      title: "Briefly",
+      description: "A chrome-extension tool that summarises long text ⚡",
+      ghub: "https://github.com/sak3y/briefly",
+      videopath: "/videos/brielfy1016.mp4",
     },
     {
       title: "Tetris",
@@ -26,18 +32,11 @@ const Projects = () => {
       videopath: "/videos/nflixclone25.mp4",
     },
     {
-      title: "Notes App",
-      description: "Lets you store notes or view it as markdown.",
-      ghub: "https://github.com/sak3y/notes-app",
-      url: "https://sak3y.github.io/notes-app/",
-      videopath: "/videos/notesapp25.mp4",
-    },
-    {
-      title: "GiHhub Tracker",
+      title: "Github Tracker",
       description: "Ever struggled to find someone on GitHub. Now all you need is there username.",
       ghub: "https://github.com/sak3y/github-profile-viewer",
       url: "https://sak3y.github.io/github-profile-viewer/",
-      videopath: "/videos/ghubfinder25.mp4",
+      videopath: "/videos/github-finder2910.mp4",
     },
   ];
 

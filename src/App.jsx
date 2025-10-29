@@ -1,11 +1,11 @@
-import "./App.scss";
+import "./App.scss"; // Styles
 import UpdateScroll from "./components/updateScroll";
 import Navigation from "./components/navigation";
+import Hero from "./pages/hero";
+import About from "./pages/about";
+import Projects from "./pages/projects";
+import Experiences from "./pages/experiences";
 import Footer from "./components/footer";
-import About from "./components/about";
-import Hero from "./components/hero";
-import Projects from "./components/projects";
-import Experiences from "./components/experiences";
 
 export default function App() {
   // Updates scorll position as user scrolls and plays animations
