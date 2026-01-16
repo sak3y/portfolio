@@ -1,9 +1,10 @@
-import SlideUp from "../components/ui/animations";
-import Project from "../components/project";
+import SlideUp from "../ui/animations";
+import Project from "../project";
 
-import bakeryVid from "../../assets/videos/bakery-site-26.mp4";
-import tetrisVid from "../../assets/videos/tetris-25.mp4";
-import netflixVid from "../../assets/videos/netflix-clone-25.mp4";
+import bakeryVid from "../../assets/videos/bakery-site.mp4";
+import v2blogVid from "../../assets/videos/v2-blog.mp4";
+import tetrisVid from "../../assets/videos/tetris.mp4";
+import netflixVid from "../../assets/videos/netflix-clone.mp4";
 
 const projectCard = [
   {
@@ -13,7 +14,14 @@ const projectCard = [
     url: "https://sak3y.github.io/novelty-bakery/",
     videopath: bakeryVid,
   },
-  { 
+  {
+    title: "v2-blog",
+    description: "A personal blog ranging from from everyday shower thoughts to general tech tips.",
+    ghub: "https://github.com/sak3y/v2-blog",
+    url: "https://sak3y.github.io/tetris/",
+    videopath: v2blogVid,
+  },
+  {
     title: "Tetris",
     description: "A Tetris tutorial project with my own personal touch.",
     ghub: "https://github.com/sak3y/tetris",

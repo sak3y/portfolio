@@ -22,7 +22,7 @@ const MobileMenu = ({ isOpen }) => {
           icon="fab fa-linkedin"
           className="mobile-icon"
           title="LinkedIn"
-          href="https://linkedin.com/in/sheikh-rayhan-ahmed"
+          href="https://linkedin.com/in/sheikh-r-ahmed"
           target="_blank"
           label="LinkedIn"
         />

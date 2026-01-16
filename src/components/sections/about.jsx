@@ -1,4 +1,4 @@
-import { SlideUpInitial } from "../components/animations";
+import { SlideUpInitial } from "../ui/animations";
 
 const About = () => {
   return (

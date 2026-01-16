@@ -1,4 +1,4 @@
-import SlideUp from "../animations";
+import SlideUp from "../ui/animations";
 import Form from "../form";
 
 const footer = () => {
