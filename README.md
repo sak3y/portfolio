@@ -11,7 +11,11 @@ Second version of my porfolio website.
 
 ## Dependencies 🛠️
 
-`React` `Vite` `SCSS` `Framer motion` `Formspree`
+`React` 
+`Vite` 
+`SCSS` 
+`Framer motion` 
+`Formspree`
 
 ## Video 🎥
 
