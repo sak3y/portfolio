@@ -7,7 +7,7 @@ const Menu = ({ isOpen, toggleMenu }) => {
   const menuButton = isOpen ? "×" : "≡";
 
   return (
-    <button className={"icon hide"} onClick={toggleMenu} style={{ fontSize: "2rem" }}>
+    <button className={"icon hide"} onClick={toggleMenu} style={{ fontSize: "1.4rem" }}>
       {menuButton}
     </button>
   );

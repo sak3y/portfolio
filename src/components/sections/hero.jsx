@@ -1,7 +1,7 @@
+import { SlideUpInitial } from "../components/animations";
 import avatar from "/src/assets/avatar.png";
-import { SlideUpInitial } from "../animations";
 
-const Hero = () => {
+const Hero = () => { 
   return (
     <section id="hero-section">
       <SlideUpInitial>

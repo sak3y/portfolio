@@ -218,12 +218,12 @@ main {
 .project {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
 
   a {
     display: flex;
-    justify-content: center;
   }
 
   .header {
@@ -235,14 +235,13 @@ main {
   .content {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     gap: 1rem;
     flex: 2;
   }
 
   .aside {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     flex: 1;
   }
 
@@ -339,7 +338,7 @@ a {
 
 .icon {
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: center;
   color: var(--text);
 

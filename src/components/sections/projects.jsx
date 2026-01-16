@@ -1,5 +1,5 @@
-import SlideUp from "../ui/animations";
-import Project from "../project";
+import SlideUp from "../components/ui/animations";
+import Project from "../components/project";
 
 import bakeryVid from "../../assets/videos/bakery-site-26.mp4";
 import tetrisVid from "../../assets/videos/tetris-25.mp4";
