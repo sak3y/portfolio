@@ -61,11 +61,10 @@ const Project = ({ title, description, ghub, url, videoSrc }) => {
         onMouseLeave={handleLeave}
         onFocus={handleEnter}
         onBlur={handleLeave}>
-          
+
         {inView &&
           <video
             ref={videoRef}
-            poster={poster}
             src={videoSrc}
             preload="metadata"
             loop
