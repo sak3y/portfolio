@@ -4,17 +4,16 @@ import Experience from "../experience";
 const Experiences = () => {
   const experiencesCard = [
     {
-      title: "Web Developer",
-      company: "Freelance",
-      dateFrom: "October 2025",
+      title: "Door Supervisor",
+      company: "Habib Security",
+      dateFrom: "July 2025",
       dateTo: "Present",
     },
     {
-      title: "Telephone Interviewer",
-      company: "IFF Research",
+      title: "Freelance Web Developer",
       dateFrom: "October 2025",
-      dateTo: "December 2025",
-    },
+      dateTo: "June 2026",
+    }
   ];
 
   return (

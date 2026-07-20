@@ -9,7 +9,7 @@ const Hero = () => {
       </SlideUpInitial>
       <SlideUpInitial delay={0.2}>
         <h1>
-          Hey, I'm Sheikh.
+          Hey, I'm Sheikh R.
           <br />
           Aspiring Full-Stack Developer.
         </h1>

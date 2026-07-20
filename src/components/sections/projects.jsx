@@ -9,14 +9,14 @@ import netflixVid from "../../assets/videos/netflix-clone.mp4";
 const projectCard = [
   {
     title: "Bakery Site",
-    description: "🧁 A bakery website developed for a local business to help exposure.",
+    description: "🧁 A bakery website developed for a local business.",
     ghub: "https://github.com/sak3y/novelty-bakery",
     url: "https://sak3y.github.io/novelty-bakery/",
     videopath: bakeryVid,
   },
   {
     title: "v2-blog",
-    description: "A personal blog ranging from from everyday shower thoughts to general tech tips.",
+    description: "A personal blog page ranging from from everyday shower thoughts to my experiences",
     ghub: "https://github.com/sak3y/v2-blog",
     url: "https://sak3y.github.io/tetris/",
     videopath: v2blogVid,
