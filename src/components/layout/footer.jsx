@@ -8,7 +8,7 @@ const footer = () => {
       <SlideUp>
         <div style={{ marginTop: "2rem" }} className="content">
           <h2>Get in Touch</h2>
-          <p style={{ width: "70%" }} className="paragraph">
+          <p style={{ width: "80%" }} className="paragraph">
             Whether you're looking to say hello or hire some real talent. Feel free to send me a
             message and I'll get back to you as soon as I can.
           </p>

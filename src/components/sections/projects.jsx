@@ -12,28 +12,28 @@ const projectCard = [
     description: "🧁 A bakery website developed for a local business.",
     ghub: "https://github.com/sak3y/novelty-bakery",
     url: "https://sak3y.github.io/novelty-bakery/",
-    videopath: bakeryVid,
+    videoSrc: bakeryVid,
   },
   {
     title: "v2-blog",
     description: "A personal blog page ranging from from everyday shower thoughts to my experiences",
     ghub: "https://github.com/sak3y/v2-blog",
     url: "https://sak3y.github.io/tetris/",
-    videopath: v2blogVid,
+    videoSrc: v2blogVid,
   },
   {
     title: "Tetris",
     description: "A Tetris tutorial project with my own personal touch.",
     ghub: "https://github.com/sak3y/tetris",
     url: "https://sak3y.github.io/tetris/",
-    videopath: tetrisVid,
+    videoSrc: tetrisVid,
   },
   {
     title: "Netflix Clone",
     description: "A Netflix clone, built with React, TypeScript and Tailwind 🍿",
     ghub: "https://github.com/sak3y/netflix-clone",
     url: "https://netflx-sheikh-ahm.netlify.app/",
-    videopath: netflixVid,
+    videoSrc: netflixVid,
   },
 ];
 
@@ -51,7 +51,7 @@ const Projects = () => {
             description={proj.description}
             url={proj.url}
             ghub={proj.ghub}
-            videopath={proj.videopath}
+            videoSrc={proj.videoSrc}
           ></Project>
         </SlideUp>
       ))}
