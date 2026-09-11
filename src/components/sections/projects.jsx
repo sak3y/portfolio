@@ -11,12 +11,13 @@ const projectCard = [
     title: "Bakery Site",
     description: "🧁 A bakery website developed for a local business.",
     ghub: "https://github.com/sak3y/novelty-bakery",
-    url: "https://sak3y.github.io/novelty-bakery/",
+    url: "https://novelty-bakery.pages.dev",
     videoSrc: bakeryVid,
   },
   {
     title: "v2-blog",
-    description: "A personal blog page ranging from from everyday shower thoughts to my experiences",
+    description:
+      "A blog page ranging from from everyday shower thoughts to my experiences",
     ghub: "https://github.com/sak3y/v2-blog",
     url: "https://sak3y.github.io/tetris/",
     videoSrc: v2blogVid,
@@ -30,7 +31,8 @@ const projectCard = [
   },
   {
     title: "Netflix Clone",
-    description: "A Netflix clone, built with React, TypeScript and Tailwind 🍿",
+    description:
+      "A Netflix clone, built with React, TypeScript and Tailwind 🍿",
     ghub: "https://github.com/sak3y/netflix-clone",
     url: "https://netflx-sheikh-ahm.netlify.app/",
     videoSrc: netflixVid,
