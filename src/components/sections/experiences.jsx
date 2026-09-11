@@ -4,12 +4,6 @@ import Experience from "../experience";
 const Experiences = () => {
   const experiencesCard = [
     {
-      title: "Door Supervisor",
-      company: "Habib Security",
-      dateFrom: "July 2025",
-      dateTo: "Present",
-    },
-    {
       title: "Freelance Web Developer",
       dateFrom: "October 2025",
       dateTo: "June 2026",

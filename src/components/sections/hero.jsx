@@ -11,9 +11,9 @@ const Hero = () => {
         <h1>
           Hey, I'm Sheikh R.
           <br />
-          Aspiring Full-Stack Developer.
+          Aspiring AI Engineer
         </h1>
-        <p className="paragraph">Designing software that works.</p>
+        <p className="paragraph">Developing workflows for efficiency</p>
       </SlideUpInitial>
       <SlideUpInitial delay={0.3}>
         <a href="#projects-section">View Projects</a>

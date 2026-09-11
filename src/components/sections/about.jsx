@@ -8,7 +8,7 @@ const About = () => {
         <p className="paragraph">I'm a CS graduate, born and raised in London.</p>
         <p className="paragraph">
           Here's the deal, I've worked on a range of projects, from engineering a tutoring website
-          that handles payments, booking and auth to building a website for a local bakery of mine.
+          that handles payments, basekt, checkout and auth to building a website for a local bakery of mine.
         </p>
         <p className="paragraph">That's just the start.</p>
         <p className="paragraph">
